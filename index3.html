@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Calmerry — Contact</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#f6fafb;
+      --card:#eaf6f8;
+      --ink:#0f2b33;
+      --muted:#3b5a64;
+      --brand:#2aa7b8;
+      --brand-700:#1f8e9d;
+      --night:#08212a;
+      --night-2:#0d2d37;
+      --white:#ffffff;
+      --ring: 0 0 0 4px rgba(42,167,184,.18);
+      --radius:22px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,Segoe UI,Roboto,Arial,Helvetica,sans-serif;
+      color:var(--ink);
+      background:var(--bg);
+      line-height:1.55;
+    }
+
+    /* Layout shell */
+    .wrap{max-width:1120px;margin:auto;padding:28px 20px 80px}
+    header{
+      display:flex;align-items:center;justify-content:space-between;
+      padding:6px 0 22px;
+    }
+    .brand{
+      display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px;color:var(--night);
+      text-decoration:none
+    }
+    .brand svg{width:28px;height:28px}
+    nav a{
+      color:var(--muted);text-decoration:none;margin-left:26px;font-weight:500
+    }
+    nav a:last-child{color:var(--brand)}
+    nav a:hover{color:var(--ink)}
+
+    /* Hero contact grid */
+    .contact{
+      display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:start;
+    }
+    h1{font-size:40px;margin:6px 0 6px}
+    .lede{color:var(--muted);max-width:56ch;margin-bottom:22px}
+
+    .info{
+      background:transparent;border-radius:var(--radius);
+      padding:6px 2px;
+      display:grid;grid-template-columns:1fr 1fr;gap:18px 28px
+    }
+    .info h4{margin:0 0 6px;font-size:16px}
+    .info p{margin:0;color:var(--muted)}
+    .info a{color:var(--ink);text-decoration:none}
+    .info a:hover{color:var(--brand-700)}
+
+    /* Form card */
+    .card{
+      background:var(--card);
+      border-radius:30px;
+      padding:18px;
+      box-shadow:0 1px 0 rgba(9,37,45,.02), 0 8px 26px rgba(9,37,45,.05) inset;
+    }
+    form{
+      background:rgba(255,255,255,.55);
+      border-radius:18px;
+      padding:18px;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px 12px;
+      backdrop-filter: blur(3px);
+    }
+    label{display:block;font-size:13px;color:var(--muted);margin-bottom:6px}
+    .field{display:flex;flex-direction:column}
+    input,textarea{
+      border:0;padding:14px 14px;border-radius:12px;background:var(--white);
+      outline:none;font:inherit;color:var(--ink);box-shadow:0 1px 0 rgba(9,37,45,.06) inset;
+    }
+    textarea{min-height:140px;resize:vertical}
+    .span-2{grid-column:1 / -1}
+    .btn{
+      appearance:none;border:0;border-radius:999px;padding:13px 18px;font-weight:600;
+      background:var(--brand);color:#fff;cursor:pointer;
+      transition:transform .04s ease, box-shadow .15s ease, background .15s ease;
+      box-shadow:0 6px 14px rgba(42,167,184,.28);
+    }
+    .btn:hover{background:var(--brand-700)}
+    .btn:active{transform:translateY(1px)}
+    input:focus-visible,textarea:focus-visible{box-shadow:var(--ring)}
+
+    /* Mid CTAs */
+    .cta-row{
+      margin-top:34px;
+      display:grid;grid-template-columns:1fr 1fr;gap:22px
+    }
+    .cta{
+      background:var(--night-2);
+      color:#d9edf1;
+      border-radius:24px;
+      padding:28px;
+      display:flex;flex-direction:column;gap:16px;
+      box-shadow:0 14px 26px rgba(4,21,26,.18);
+    }
+    .cta h3{color:#fff;margin:0}
+    .cta p{margin:0 0 8px}
+    .cta .ghost{
+      align-self:flex-start;background:#0f3a45;color:#dff6fa;border-radius:999px;
+      padding:12px 18px;text-decoration:none;font-weight:600;box-shadow:0 0 0 1px rgba(255,255,255,.08) inset
+    }
+
+    /* Footer */
+    footer{
+      margin-top:18px;background:var(--night);color:#cfe6eb;border-radius:24px;padding:28px
+    }
+    .foot-grid{
+      display:grid;grid-template-columns:1.2fr .8fr .8fr;gap:28px;align-items:start
+    }
+    .logo-line{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+    .sm{display:flex;gap:10px;margin:10px 0 0}
+    .dot{
+      width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:#0f3a45;color:#dff6fa;font-size:14px
+    }
+    .fnav a{display:block;color:#cfe6eb;text-decoration:none;margin:6px 0}
+    .fnav a:hover{color:#fff}
+    .foot-note{font-size:13px;color:#9cc4cb;margin-top:6px}
+
+    /* Responsiveness */
+    @media (max-width: 960px){
+      .contact{grid-template-columns:1fr}
+      form{grid-template-columns:1fr}
+      .cta-row{grid-template-columns:1fr}
+      .foot-grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="#">
+        <!-- simple cog/flower mark -->
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M12 2l1.7 2.7 3.2-.1.5 3.1 2.8 1.5-1.5 2.8 1.9 2.6-2.7 1.7.1 3.2-3.1.5-1.5 2.8-2.8-1.5-2.6 1.9-1.7-2.7-3.2.1-.5-3.1-2.8-1.5 1.5-2.8-1.9-2.6 2.7-1.7-.1-3.2 3.1-.5L9.2 3.5 12 2z" fill="#2aa7b8" opacity=".18"/>
+          <circle cx="12" cy="12" r="5.2" stroke="#2aa7b8" stroke-width="2" fill="#fff"/>
+          <circle cx="12" cy="12" r="2.4" fill="#2aa7b8"/>
+        </svg>
+        Calmerry
+      </a>
+      <nav>
+        <a href="#">About us</a>
+        <a href="#">Pricing</a>
+        <a href="#">Contacts</a>
+      </nav>
+    </header>
+
+    <main class="contact">
+      <!-- Left: copy and quick contact info -->
+      <section>
+        <h1>Get in touch with us</h1>
+        <p class="lede">
+          Thanks for stopping by! Whether you have a question, comment, or just
+          want to say “hi”, don’t be a stranger. We’re here to help, and we love
+          connecting with our community.
+        </p>
+
+        <div class="info">
+          <div>
+            <h4>Chat to us</h4>
+            <p>Our friendly team is here to help</p>
+            <p><a href="mailto:team@calmerry.com">@calmerrycare</a></p>
+          </div>
+
+          <div>
+            <h4>Call us</h4>
+            <p>Toll-free, call</p>
+            <p><a href="tel:18447402144">1 (844) 740-2144</a></p>
+          </div>
+
+          <div>
+            <h4>Visit us</h4>
+            <p>Come say hello at our office</p>
+            <p>6000 J Center #320, Sacramento,<br/>CA 95818, United States</p>
+          </div>
+
+          <div>
+            <h4>Hours</h4>
+            <p>Monday–Friday 9am–5pm</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Right: form card -->
+      <aside class="card" aria-labelledby="contact-form-title">
+        <form action="#" method="post">
+          <h2 id="contact-form-title" class="span-2" style="margin:2px 0 4px;font-size:18px;color:var(--muted);">Send us a message</h2>
+          <div class="field">
+            <label for="first">Name*</label>
+            <input id="first" name="first" placeholder="Name" required>
+          </div>
+          <div class="field">
+            <label for="last">Last name*</label>
+            <input id="last" name="last" placeholder="Last name" required>
+          </div>
+
+          <div class="field span-2">
+            <label for="email">Email*</label>
+            <input id="email" name="email" type="email" placeholder="Email" required>
+          </div>
+
+          <div class="field span-2">
+            <label for="msg">Your message*</label>
+            <textarea id="msg" name="message" placeholder="Write your message…" required></textarea>
+          </div>
+
+          <div class="span-2" style="display:flex;justify-content:flex-start">
+            <button class="btn" type="submit">Send message</button>
+          </div>
+        </form>
+      </aside>
+    </main>
+
+    <!-- Mid CTAs -->
+    <section class="cta-row">
+      <article class="cta" style="background:#0d2d37">
+        <h3>Unlock Efficiency: Download Survey</h3>
+        <p>Get our survey to learn how companies increased their efficiency with Calmerry.</p>
+        <a class="ghost" href="#">Download</a>
+      </article>
+
+      <article class="cta">
+        <div class="logo-line">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="12" cy="12" r="10" fill="#2aa7b8" opacity=".22"/>
+            <path d="M7 13.5l3 3 7-7" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <strong>Calmerry</strong>
+        </div>
+        <div>
+          1 (844) 740-2144 · toll-free<br>
+          team@calmerry.com
+        </div>
+        <div class="sm" aria-label="social links">
+          <span class="dot">f</span><span class="dot">t</span><span class="dot">in</span><span class="dot">ig</span>
+        </div>
+        <div class="foot-note">
+          If you are in a life-threatening situation, don’t use this site. Call 1 (800) 273-8255 to get immediate help.
+        </div>
+      </article>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="foot-grid">
+        <div>
+          <div class="logo-line">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 2l1.7 2.7 3.2-.1.5 3.1 2.8 1.5-1.5 2.8 1.9 2.6-2.7 1.7.1 3.2-3.1.5-1.5 2.8-2.8-1.5-2.6 1.9-1.7-2.7-3.2.1-.5-3.1-2.8-1.5 1.5-2.8-1.9-2.6 2.7-1.7-.1-3.2 3.1-.5L9.2 3.5 12 2z" fill="#2aa7b8" opacity=".18"/>
+              <circle cx="12" cy="12" r="5.2" stroke="#2aa7b8" stroke-width="2" fill="#0d2d37"/>
+              <circle cx="12" cy="12" r="2.4" fill="#2aa7b8"/>
+            </svg>
+            <strong>Calmerry</strong>
+          </div>
+          <div>1 (844) 740-2144 · toll-free<br>team@calmerry.com</div>
+          <div class="sm">
+            <span class="dot">f</span><span class="dot">t</span><span class="dot">in</span><span class="dot">ig</span>
+          </div>
+          <p class="foot-note">© <span id="yr"></span> Calmerry. All rights reserved.</p>
+        </div>
+
+        <div class="fnav" aria-label="Company">
+          <strong style="color:#fff">About us</strong>
+          <a href="#">Pricing</a>
+          <a href="#">Contacts</a>
+          <a href="#">Blog</a>
+        </div>
+
+        <div class="fnav" aria-label="Legal">
+          <strong style="color:#fff">Legal</strong>
+          <a href="#">Careers</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // tiny helper to keep the footer year fresh
+    document.getElementById('yr').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
